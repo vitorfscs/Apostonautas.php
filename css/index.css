@@ -1,0 +1,310 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: #f7f7f7;
+}
+
+/* Cabeçalho */
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #003366;
+    padding: 15px 30px;
+    color: white;
+    flex-wrap: wrap; /* Permite que os itens dentro do header se movam para uma nova linha em telas menores */
+}
+
+.topo .logo h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.topo .logo p {
+    font-size: 1em;
+}
+
+.topo nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-left: auto; /* Coloca os itens do menu na parte direita */
+}
+
+.topo nav ul li {
+    padding: 5px 10px;
+    background-color: #1e70ff;
+    border-radius: 25px;
+}
+
+.topo nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.topo nav ul li a:hover {
+    background-color: #155bb0;
+    transition: 0.3s;
+}
+
+/* Seção principal de destaque (Hero) */
+.hero-section {
+    text-align: center;
+    background-image: url('../image/BG.jpg'); /* Substitua pela sua imagem */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-section .cta-button {
+    background-color: #ff4d4d;
+    color: white;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-section .cta-button:hover {
+    background-color: #e60000;
+}
+
+/* Popups */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    position: relative;
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Formulários dentro dos popups */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+form input {
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #1e70ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+form button:hover {
+    background-color: #155bb0;
+}
+
+/* Carrossel de Imagens */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0; /* Impede que as imagens encolham */
+    border-radius: 8px; /* Bordas arredondadas */
+    max-width: 100%; /* Assegura que as imagens ocupem toda a largura do container */
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-controls .prev {
+    left: 10px;
+}
+
+.carousel-controls .next {
+    right: 10px;
+}
+
+/* Responsividade */
+
+/* Ajustes para telas pequenas */
+@media screen and (max-width: 768px) {
+    .topo {
+        flex-direction: column; /* Coloca os elementos do cabeçalho em coluna em vez de linha */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+
+    .topo .logo h2 {
+        font-size: 1.5em; /* Diminui o tamanho da fonte do título */
+    }
+
+    .topo .logo p {
+        font-size: 1em;
+    }
+
+    .topo nav ul {
+        flex-direction: column; /* Organiza os links de navegação em coluna */
+        gap: 10px;
+    }
+
+    .topo nav ul li {
+        padding: 10px;
+        background-color: #1e70ff;
+        border-radius: 25px;
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em; /* Diminui o tamanho do título no herói */
+    }
+
+    .hero-section p {
+        font-size: 1.1em; /* Diminui o tamanho do texto da descrição */
+    }
+
+    .hero-section .cta-button {
+        font-size: 1em; /* Ajusta o tamanho do botão */
+        padding: 12px 25px;
+    }
+
+    /* Ajusta o carrossel para telas menores */
+    .carousel {
+        display: block; /* As imagens do carrossel ficam em bloco em telas menores */
+    }
+
+    /* Ajuste da largura do pop-up */
+    .popup-content {
+        width: 90%;
+    }
+
+    /* Ajuste no "Bem-vindo" no topo */
+    .user-welcome {
+        font-size: 0.9em; /* Ajusta o tamanho das fontes */
+    }
+
+    .user-name {
+        font-size: 1.3em; /* Tamanho adequado para o nome */
+    }
+
+    .user-details {
+        font-size: 0.8em; /* Detalhes menores em dispositivos móveis */
+    }
+}
+
+/* Ajustes para telas muito pequenas (dispositivos como celulares pequenos) */
+@media screen and (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2em; /* Menor tamanho no título */
+    }
+
+    .hero-section .cta-button {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    /* Ajustes de layout */
+    .topo .logo h2 {
+        font-size: 1.3em;
+    }
+
+    .topo .logo p {
+        font-size: 0.9em;
+    }
+
+    .topo nav ul {
+        gap: 5px; /* Menos espaço entre os itens no menu */
+    }
+
+    .topo nav ul li {
+        font-size: 0.9em; /* Reduz o tamanho da fonte dos itens de navegação */
+    }
+}

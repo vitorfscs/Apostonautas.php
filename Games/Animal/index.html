@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jackpot de Animais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="jackpot-machine">
+      <div class="reel" id="reel1">
+        <div class="slot">🐶</div>
+        <div class="slot">🐱</div>
+        <div class="slot">🐸</div>
+        <div class="slot">🦁</div>
+        <div class="slot">🐯</div>
+        <div class="slot">🐰</div>
+      </div>
+      <div class="reel" id="reel2">
+        <div class="slot">🐶</div>
+        <div class="slot">🐱</div>
+        <div class="slot">🐸</div>
+        <div class="slot">🦁</div>
+        <div class="slot">🐯</div>
+        <div class="slot">🐰</div>
+      </div>
+      <div class="reel" id="reel3">
+        <div class="slot">🐶</div>
+        <div class="slot">🐱</div>
+        <div class="slot">🐸</div>
+        <div class="slot">🦁</div>
+        <div class="slot">🐯</div>
+        <div class="slot">🐰</div>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <p>Fichas: <span id="fichas">10</span></p>
+      <div>
+        <label for="creditos">Escolha seus créditos:</label>
+        <input type="number" id="creditos" value="1" min="1" max="10" />
+        <button id="mute-button">Mutar Música</button>
+      </div>
+      <button id="girar">Girar!</button>
+    </div>
+  </div>
+
+  <!-- Efeito Sonoro -->
+<!-- Efeito Sonoro -->
+<audio id="bet-sound" src="audio/aposta.mp3"></audio>
+<audio id="win-5x-sound" src="audio/5X.mp3"></audio> <!-- Som para 5x -->
+<audio id="win-50x-sound" src="audio/50x.mp3"></audio> <!-- Som para 50x -->
+<audio id="background-music" src="audio/sound.mp3" loop></audio>
+
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
